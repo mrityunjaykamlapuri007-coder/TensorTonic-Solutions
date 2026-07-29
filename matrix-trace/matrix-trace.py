@@ -5,11 +5,10 @@ def matrix_trace(A):
     Compute the trace of a square matrix (sum of diagonal elements).
     """
     A = np.asarray(A)
-    n,n = A.shape
-    sum = 0
-
+    if A.ndim != 2 or A.shape[0] != A.shape[1]:
+        raise ValueError("Matrix must be square")
+    n = A.shape[0]
+    s = 0
     for i in range(n):
-        for j in range(n):
-            if (i == j):
-                sum += A[i][j]
-    return sum
+        s += A[i, i]
+    return float(s)
