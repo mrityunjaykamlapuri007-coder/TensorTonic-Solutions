@@ -8,10 +8,6 @@ def euclidean_distance(x, y):
     X = np.asarray(x)
     Y = np.asarray(y)
 
-    diff = np.abs(len(X) - len(Y))
-
-    a = np.zeros(diff)
-
     if (len(Y) != len(X)):
         raise ValueError("not equal vectors")
 
